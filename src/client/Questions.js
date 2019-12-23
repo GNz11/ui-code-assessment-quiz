@@ -29,7 +29,7 @@ export default class Questions extends React.Component {
     event.preventDefault();
     const questionData = this.state.results[this.state.question_idx]
     if (event.target.answer.value === questionData.correct_answer) {
-      console.debug("correct!")
+      // console.debug("correct!")
       let correct_answers = this.state.correct_answers
       this.setState({
         correct_answers: ++correct_answers
@@ -43,7 +43,7 @@ export default class Questions extends React.Component {
   }
 
   async getQuestions() {
-    console.debug('fetching questions..')
+    // console.debug('fetching questions..')
     try {
       const response = await axios.get('/api/questions')
       let questions = response.data.results
@@ -76,10 +76,14 @@ export default class Questions extends React.Component {
       questionUI = <TextQuestion questionData={questionData}/>
     }
     return (
-      <form onSubmit={this.handleSubmit}>
-        {questionUI}
-        <input type="submit" value="Next" />
-      </form>
+
+        <form onSubmit={this.handleSubmit}>
+          {questionUI}
+          <div>
+          <input class="btn btn-primary" type="submit" value="Next" />
+          </div>
+        </form>
+
     )
   }
 

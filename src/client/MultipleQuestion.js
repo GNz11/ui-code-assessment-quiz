@@ -9,9 +9,9 @@ const MultipleQuestion = (props) => {
     <label>
       {props.questionData.question}
       {options.map(option => (
-          <div key={option}>
-          <input name="answer" type="radio" key={option} value={option} defaultChecked={false}/>
-          {option}
+          <div class="form-check" key={option}>
+          <input class="form-check-input" name="answer" type="radio" key={option} value={option} defaultChecked={false}/>
+          <label class="form-check-label" for={option}>{option}</label>
           </div>
         ))
       }

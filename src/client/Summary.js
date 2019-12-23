@@ -3,12 +3,18 @@ import React from 'react'
 const Summary = (props) => {
   return (
     <div>
-      <h1>Summary</h1>
-      <div>Correct: {props.correct}</div>
-      <div>Wrong: {props.questionCount - props.correct}</div>
-      <div>Questions answered: {props.questionCount}</div>
-      <div>Final Score: {Math.floor((props.correct/props.questionCount) * 100)}%</div>
-      <button type="button" onClick={() => window.location.reload(false)}>Restart Quiz!</button>
+      <h3>SUMMARY</h3>
+      <div>Correct: <span class="font-weight-bold">{props.correct}</span>
+      </div>
+      <div>Wrong: <span class="font-weight-bold">{props.questionCount - props.correct}</span>
+      </div>
+      <div>Questions answered: <span class="font-weight-bold">{props.questionCount}</span>
+      </div>
+      <div>Final Score: <span class="font-weight-bold">{Math.floor((props.correct/props.questionCount) * 100)}%</span>
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary" onClick={() => window.location.reload(false)}>Restart Quiz</button>
+      </div>
     </div>
   )
 }

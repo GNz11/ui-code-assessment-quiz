@@ -4,13 +4,13 @@ const BooleanQuestion = (props) => {
   return (
     <label>
       {props.questionData.question}
-      <div>
-        <input name="answer" type="radio" key="True" value="True" defaultChecked={false}/>
-        True
+      <div class="form-check">
+        <input class="form-check-input" name="answer" type="radio" key="True" value="True" defaultChecked={false}/>
+        <label class="form-check-label" for="True">True</label>
       </div>
-      <div>
-        <input name="answer" type="radio" key="False" value="False" defaultChecked={false}/>
-        False
+      <div class="form-check">
+        <input class="form-check-input" name="answer" type="radio" key="False" value="False" defaultChecked={false}/>
+        <label class="form-check-label" for="False">False</label>
       </div>
     </label>
   )
